@@ -1,15 +1,12 @@
 import discord
 from discord.ext import commands, tasks
-from discord import FFmpegPCMAudio,ChannelType
-import datetime
+from discord import FFmpegPCMAudio
 from asyncio import sleep
 import  time
 import os
-from dotenv import load_dotenv
-import asyncio
 
 
-load_dotenv()
+
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
 
