@@ -24,6 +24,19 @@ trigger = curr_time.tm_min == 00
 print(trigger)
 print(curr_clock)
 
+@client.event
+async def on_ready():
+    channelGot = client.get_channel(channel_id)
+    @tasks.loop(seconds=3.0)
+    async def joiner():
+        print("joiner")
+        voice = await channelGot.connect()
+        source = FFmpegPCMAudio('bigben.mp3')
+        player = voice.play(source)
+    joiner.start()
+
+
+
 
 @client.command()
 async def channels(ctx):
